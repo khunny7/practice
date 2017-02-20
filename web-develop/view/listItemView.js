@@ -8,7 +8,20 @@ app.listItemView = Backbone.View.extend({
     template: _.template( $("#listItemTemplate").html() ),
 
     render: function() {
-        this.$el.html(flowerTemplate);
+        this.$el.html(this.template);
         return this;
+    },
+
+    events: {
+        'mouseover' : 'addBgColor',
+        'mouseout' : 'removeBgColor'
+    },
+
+    addBgColor: function() {
+        this.$el.addClass("bgColor");
+    },
+
+    removeBgColor: function() {
+        this.$el.removeClass("bgColor");
     }
 });
