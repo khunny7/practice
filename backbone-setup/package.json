@@ -1,0 +1,22 @@
+{
+  "name": "backbone-setup",
+  "version": "1.0.0",
+  "description": "webpack evn setup",
+  "main": "entry.js",
+  "dependencies": {
+    "babel-loader": "^7.1.1",
+    "css-loader": "^0.28.4",
+    "style-loader": "^0.18.2"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "babel --presets es2015 entry.js -o build/main.bundle.js",
+    "start": "http-server",
+    "webpack": "webpack"
+  },
+  "author": "",
+  "license": "ISC"
+}
