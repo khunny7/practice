@@ -1,0 +1,12 @@
+//- each article in articles
+//-     .title
+//-         h2= article.title
+//-     .date
+//-         p= article.date
+//-     .description
+//-         p= article.description
+each item in items
+    h2.title= item.title
+    .description= item.description
+    .price= item.price
+    input(type='submit', value=item.buttonDescription)
