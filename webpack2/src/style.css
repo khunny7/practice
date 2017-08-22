@@ -3,5 +3,8 @@
 }
 
 body {
-    background: url('./kate-profile.jpg');
+}
+
+.price {
+    color: grey;
 }
