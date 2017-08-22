@@ -1,0 +1,7 @@
+.cool-items-container.row
+    each item in items
+        .item-container.col-sm-4
+            h2.title= item.title
+            .description= item.description
+            .price= item.price
+            button.btn.btn-primary(type='button')= item.buttonDescription

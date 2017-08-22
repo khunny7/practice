@@ -1,4 +1,5 @@
 const path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
     entry: './src/index.js',
@@ -28,7 +29,17 @@ module.exports = {
             {
                 test: /\.pug$/,
                 loader: 'pug-loader'
+            },
+            {
+                test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+                loader: 'url-loader?limit=100000'
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+           $: "jquery",
+           jQuery: "jquery"
+       })
+    ]
 };
