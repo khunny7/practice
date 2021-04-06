@@ -6,7 +6,6 @@ Building RESTful APIs with NOde.js and Express
 // need to have mongo data folder
 
 // Run the docker with backend
-docker network create contacts-network
 docker build -t khunny7/contacts .
 docker-compose up -d
 
