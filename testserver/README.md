@@ -1,7 +1,13 @@
 course: https://www.linkedin.com/learning/building-restful-apis-with-node-js-and-express
 
 Building RESTful APIs with NOde.js and Express
+** docker configuration is added on top
 
-mongod should be started before the app can start working
+// need to have mongo data folder
 
-Try swagger, loopback, koajs
+// Run the docker with backend
+docker network create contacts-network
+docker build -t khunny7/contacts .
+docker-compose up -d
+
+
