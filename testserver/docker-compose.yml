@@ -1,8 +1,18 @@
 version: "3.8"
 services:
-    contacts:
-        build: .
-        container_name: contacts
+    contacts_webapp:
+        build: ./webapp
+        container_name: contacts_webapp
+        ports:
+            - 5000:5000
+        depends_on:
+            - contacts_service
+        restart: unless-stopped
+        networks:
+            - contacts-network
+    contacts_service:
+        build: ./service
+        container_name: contacts_service
         ports:
         - 4000:4000
         depends_on:
