@@ -1,7 +1,22 @@
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {getContacts} from './contacts/list';
 
 function App() {
+  const [contactList, setContactList] = useState([]);
+
+  useEffect(() => {
+    let mounted = true;
+    getContacts()
+      .then(contacts => {
+        if (mounted) {
+          setContactList(contacts)
+        }
+      })
+    return () => mounted = false;
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +33,20 @@ function App() {
           Learn React
         </a>
       </header>
+      <div>
+        {
+          contactList &&
+          contactList.map(item => 
+              (
+                <div key={item._id}>
+                  <div>{item.firstName}</div>
+                  <div>{item.lastName}</div>
+                  <div>{item.email}</div>
+                </div>
+              )              
+          )
+        }
+      </div>
     </div>
   );
 }

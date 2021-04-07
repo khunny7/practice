@@ -2,6 +2,7 @@ import express from 'express';
 import routes from './src/routes/crmRoutes';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 
 const app = express();
 const PORT = 4000;
@@ -16,6 +17,7 @@ mongoose.connect('mongodb://mongodb.testserver_contacts-network/CRMdb', {
 // bodyparser setup
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
+app.use(cors());
 
 routes(app);
 
