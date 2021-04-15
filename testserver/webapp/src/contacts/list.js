@@ -1,4 +1,4 @@
 export function getContacts() {
-    return fetch('http://localhost:4000/contact')
+    return fetch('http://192.168.86.28:4000/contact')
         .then(contacts => contacts.json())
 }

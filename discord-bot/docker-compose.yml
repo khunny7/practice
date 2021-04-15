@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+    sana-lio-discord-bot:
+        build: ./
+        image: khunny7/sana-lio-discord-bot
+        container_name: sana-lio-discord-bot
+        restart: unless-stopped
+        networks:
+            - discord-bot-network
+networks:
+    discord-bot-network:

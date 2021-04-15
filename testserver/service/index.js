@@ -8,7 +8,7 @@ const app = express();
 const PORT = 4000;
 
 // mongoose connection
-mongoose.connect('mongodb://mongodb.testserver_contacts-network/CRMdb', {
+mongoose.connect('mongodb://mongodb.testserver_todo-network/CRMdb', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => console.log('Database Connected'))
