@@ -13,7 +13,7 @@ const intentToEntitieKeysAndResolution = {
 }
 
 const getIntent = (query) => {
-    return fetch(`https://westus.api.cognitive.microsoft.com/luis/prediction/v3.0/apps/b509abb9-9087-4bff-893d-279b978f0a3c/slots/production/predict?subscription-key=2cbaefdd6da04ecf82145ffe0d3edd64&verbose=true&show-all-intents=true&log=true&query=${query}`)
+    return fetch(`https://westus.api.cognitive.microsoft.com/luis/prediction/v3.0/apps/b509abb9-9087-4bff-893d-279b978f0a3c/slots/production/predict?subscription-key=${process.env.LUIS_SUBSCRIPTION_KEY}&verbose=true&show-all-intents=true&log=true&query=${query}`)
         .then(res => res.json())
         .then((result) => {
             const topIntent = result.prediction.topIntent;

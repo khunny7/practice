@@ -4,4 +4,4 @@ package-lock.json
 db/
 *.jpg
 *.jpeg
-
+.env

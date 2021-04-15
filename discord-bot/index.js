@@ -1,8 +1,10 @@
+import dotenv from 'dotenv';
 import getIntent from './cognitive/index';
 
 var Discord = require('discord.io');
 var logger = require('winston');
-var auth = require('./auth.json');
+
+dotenv.config();
 
 // Configure logger settings
 logger.remove(logger.transports.Console);
@@ -13,7 +15,7 @@ logger.level = 'debug';
 
 // Initialize Discord Bot
 var bot = new Discord.Client({
-   token: auth.token,
+   token: process.env.DISCORD_BOT_TOKEN,
    autorun: true
 });
 
